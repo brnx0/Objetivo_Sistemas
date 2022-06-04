@@ -4,11 +4,10 @@ import 'Calculadora.dart';
 
 
 void main (){
-  // Instanciando obj
-
-  String sair = "0";
+  
+  int sair = 0;
   print("------Calculadora--------- \n\n");
-  while (sair=="0") { // While pra manter um loop caso deseje mais de uma operação 
+  while (sair == 0) { // While pra manter um loop caso deseje mais de uma operação 
   Calculadora calc = new Calculadora();
     calc.operacoes.forEach(print);//Menu 
     int escolha = int.parse(stdin.readLineSync()!);
@@ -78,20 +77,14 @@ void main (){
         print(Process.runSync("cls", ["cls"], runInShell: true).stdout);
         print("$valor_1 / $valor_2 ="+resultado.toStringAsFixed(2));
         break;
-
       default:
-        // print ("Por favor, Digite uma opção valida.")
-        // return ;
+        print ("Por favor, Digite uma opção valida.");  
     }
-
-
-    print("Deseja Sair ?  \n [1] Sim \n [0]Não");
-    sair = stdin.readLineSync()!;
-
-  
+    if (escolha > 4 || escolha < 1){
+      sair = 0;
+    }else{
+      print("Deseja Sair ?  \n [1] Sim \n [0]Não");
+      sair = int.parse(stdin.readLineSync()!);
+    } 
   }
-    
-  
-
-  
 }

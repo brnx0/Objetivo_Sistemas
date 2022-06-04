@@ -1,47 +1,40 @@
 class Calculadora{
-List<String> operacoes =["OPERAÇÕES", "1-Somar" , "2-Subtrair", "3-Dividir", "4-Subtrair"  ];
+List<String> operacoes =["OPERAÇÕES", "[1] Somar" , "[2] Subtrair", "[3] Multiplicar", "[4] Dividir"  ];
 
-dynamic n;
+dynamic valor_1;
+dynamic valor_2;
 
-bool validador(){
-  bool v = isNumeric(n);
+bool validador(valor){
+  bool v = isNumeric(valor);
   return v;
 }
 bool isNumeric(s) {
    if (s == null) {
        return false;
    }
+    
     return double.tryParse(s) != null;
    }
 
 
 
-num somar(n1, n2){
-
-  num result = n1+n2;
-  return result;
+num somar(valor1, valor2){
+  return valor1+valor2;
 
 }
 
 
 
-num subtrair(n1, n2){
-
-  num result = n1+n2;
-  return result;
-
-}
-num multiplicar(n1, n2){
-
-  num result = n1+n2;
-  return result;
-
+num subtrair(valor1, valor2){
+  return valor1-valor2;
 }
 
-num dividir(n1, n2){
+num multiplicar(valor1, valor2){
+  return valor1*valor2;
+}
 
-  num result = n1+n2;
-  return result;
+num dividir(valor1, valor2){
+  return valor1/valor2;
 
 }
   
